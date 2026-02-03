@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área do Cliente | Rabiscos da Kinny</title>
+
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/commissions.css">
+    <link rel="stylesheet" href="css/mobile.css">
+    <style>
+        .queue-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .queue-item {
+            background: white;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--card-shadow);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-left: 5px solid #eee;
+        }
+
+        .queue-item.done {
+            border-left-color: #66bb6a;
+        }
+
+        .queue-item.wip {
+            border-left-color: #ffca28;
+        }
+
+        .queue-item.waiting {
+            border-left-color: #bdbdbd;
+        }
+
+        .client-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .client-avatar {
+            width: 50px;
+            height: 50px;
+            background: #eee;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .status-badge {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .status-badge.done {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .status-badge.wip {
+            background-color: #fff8e1;
+            color: #f57f17;
+        }
+
+        .status-badge.waiting {
+            background-color: #f5f5f5;
+            color: #616161;
+        }
+
+        @media(max-width: 600px) {
+            .queue-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="main-header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">✨ Rabiscos da Kinny</a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link" data-lang="nav_home">Início</a></li>
+                    <li><a href="portfolio.html" class="nav-link" data-lang="nav_portfolio">Portfólio</a></li>
+                    <li><a href="commissions.html" class="nav-link" data-lang="nav_commissions">Comissões</a></li>
+                    <li><a href="vip.html" class="nav-link" data-lang="nav_vip">Área VIP</a></li>
+                    <li><a href="client.html" class="nav-link active" data-lang="nav_client">Área do Cliente</a></li>
+                </ul>
+            </nav>
+
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+
+            <button id="lang-switch" class="lang-switch">EN</button>
+        </div>
+    </header>
+
+    <div class="container" style="margin-top: 100px;">
+        <h2 class="section-title" data-lang="client_title">Acompanhe seu Pedido</h2>
+
+        <div style="text-align: center; margin-bottom: 40px; color: var(--text-color);">
+            <p>Verifique o status da sua comissão em tempo real na lista abaixo.</p>
+        </div>
+
+        <div class="queue-list">
+            <!-- Simulated Queue Items -->
+            <div class="queue-item wip">
+                <div class="client-info">
+                    <div class="client-avatar">🌙</div>
+                    <div>
+                        <h4>Pedido #442 - @LunarSkies</h4>
+                        <p>Fullbody - Colorido</p>
+                    </div>
+                </div>
+                <span class="status-badge wip">Em Andamento (Lineart) ✏️</span>
+            </div>
+
+            <div class="queue-item waiting">
+                <div class="client-info">
+                    <div class="client-avatar">🦊</div>
+                    <div>
+                        <h4>Pedido #443 - FoxGamer</h4>
+                        <p>Icon - Bust</p>
+                    </div>
+                </div>
+                <span class="status-badge waiting">Aguardando Início ⏳</span>
+            </div>
+
+            <div class="queue-item done">
+                <div class="client-info">
+                    <div class="client-avatar">🌸</div>
+                    <div>
+                        <h4>Pedido #441 - SakuraChan</h4>
+                        <p>Chibi - Fullbody</p>
+                    </div>
+                </div>
+                <span class="status-badge done">Concluído ✅</span>
+            </div>
+
+            <div class="queue-item done">
+                <div class="client-info">
+                    <div class="client-avatar">⭐</div>
+                    <div>
+                        <h4>Pedido #440 - StarDust</h4>
+                        <p>Sheet Character Design</p>
+                    </div>
+                </div>
+                <span class="status-badge done">Concluído ✅</span>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://www.tiktok.com/@guaxinim_kinny_ofc" target="_blank" class="social-icon"
+                    title="TikTok">🎵</a>
+                <a href="#" class="social-icon">📸</a>
+                <a href="#" class="social-icon">🖌️</a>
+            </div>
+            <div class="credits">
+                <p>&copy; 2024 Rabiscos da Kinny. <span data-lang="footer_rights">Todos os direitos reservados.</span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/translations.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
